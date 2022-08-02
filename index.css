@@ -1,0 +1,212 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+/* Variables */
+:root {
+    /* Primary */
+    --moderate-violet: hsl(263, 55%, 52%);
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+
+    /* Neutral */
+    --light-gray: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+
+    /* Fonts */
+    --ff-primary: "Barlow Semi Condensed", sans-serif;
+
+    /* Weights */
+    --fw-400: 500;
+    --fw-700: 600;
+
+    /* Size */
+    --fs-300: 0.6875rem;
+    --fs-400: 0.8125rem;
+    --fs-500: 1.25rem;
+}
+
+/* Defaults */
+/* box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+/* images default */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* global layout */
+body {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+
+    font-family: var(--ff-primary);
+    font-weight: var(--fs-400);
+
+    background-color: var(--light-grayish-blue);
+}
+
+h1,
+h2,
+h3 {
+    font-weight: var(--fw-700);
+}
+
+/* Layout */
+.name-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.name-card h2 {
+    font-size: var(--fs-400);
+    font-weight: var(--fw-400);
+    line-height: 1;
+}
+
+.name-card h3 {
+    font-size: var(--fs-300);
+    opacity: 0.5;
+}
+
+.container {
+    display: grid;
+    grid-auto-columns: 1fr;
+    gap: 1.5rem;
+    grid-template-areas: 
+        'one'
+        'two'
+        'three'
+        'four'
+        'five';
+
+    padding-block: 2rem;
+    width: min(95%, 70rem);
+    margin-inline: auto;
+}
+
+article {
+    font-size: var(--fs-400);
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(var(--clr-secondary-400) / 0.25);
+}
+
+article img {
+    width: 1.75rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+article:nth-child(1) {
+    background-image: url(images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: top right 10%;
+    background-color: var(--moderate-violet);
+    color: var(--white);
+    grid-area: one;
+}
+
+article:nth-child(2) {
+    background-color: var(--very-dark-grayish-blue);
+    color: var(--white);
+    grid-area: two;
+}
+
+article:nth-child(3) {
+    background-color: var(--white);
+    color: var(--very-dark-grayish-blue);
+    grid-area: three;
+}
+
+article:nth-child(4) {
+    background-color: var(--very-dark-blackish-blue);
+    color: var(--white);
+    grid-area: four;
+}
+
+article:nth-child(5) {
+    background-color: var(--white);
+    color: var(--very-dark-grayish-blue);
+    grid-area: five;
+}
+
+article > p:first-of-type {
+    font-size: var(--fs-500);
+    line-height: 1.2;
+}
+  
+article > p:last-of-type {
+    opacity: 0.7;
+}
+
+article > *:where(:not(:first-child)) {
+    margin-top: var(--flow-spacer, 1em);
+}
+
+/* Footer */
+.attribution {
+    font-size: 11px; text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+
+/* Media query */
+@media screen and (min-width: 33em) {
+    .container {
+        grid-template-areas:
+        "one one"
+        "two three"
+        "five five"
+        "four four";
+    }
+}
+  
+@media screen and (min-width: 38em) {
+    .container {
+      grid-template-areas:
+       'one one'
+       'two five'
+       'three five'
+       'four four';
+    }
+}
+  
+@media screen and (min-width: 54em) {
+    .container {
+        grid-template-areas:
+        "one one two"
+        "five five five"
+        "three four four";
+    }
+}
+  
+@media screen and (min-width: 75em) {
+    .container {
+        grid-template-areas:
+        "one one two five"
+        "three four four five";
+    }
+}
+  
