@@ -76,13 +76,13 @@ h3 {
     gap: 1rem;
 }
 
-.name-card h2 {
+.name-card h1 {
     font-size: var(--fs-400);
     font-weight: var(--fw-400);
     line-height: 1;
 }
 
-.name-card h3 {
+.name-card h2 {
     font-size: var(--fs-300);
     opacity: 0.5;
 }
